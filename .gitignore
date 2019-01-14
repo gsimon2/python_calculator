@@ -1,3 +1,6 @@
 *.pyc
 *~
 *.swps
+/build/*
+/dist/*
+calc_main.spec
