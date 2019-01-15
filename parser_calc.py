@@ -54,10 +54,20 @@ def p_error(p):
  
  
 class calc_parser():
+	"""  Calc Parser Class
+		Provides a simple interface for parsing lines of mathematical expressions
+	"""
 	def __init__(self):
+		""" Init
+			Initialize an instance of the parser (YACC parser)
+		"""
 		self.parser = yacc.yacc()
 		
 	def parse_input(self, _input):
+		""" Parse Input
+			Provide a single line of input, parap:_input to the parser
+			Return the solution to the input
+		"""
 		return self.parser.parse(_input)
 		
 

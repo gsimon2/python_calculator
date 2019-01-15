@@ -6,16 +6,29 @@ from tkinter import Tk, Label, Button, Entry, END
 
 
 class calculator():
-	
+	""" Calculator Class
+		Creates a small gui for the calc_parser class
+	"""
+
 	def __init__(self, root_window):
+		""" Init
+			Initializing the root window for the gui and builds the graphics layout
+		"""
 		self.parser = calc_parser()
 		self.root_window = root_window
 		self.build_layout()
  
 	def solve(self, _input):
+		""" Solve
+			Provides param: _input to the calc_parser to solve valid math equations
+			Return the solution to the input
+		"""
 		return self.parser.parse_input(_input)
 
 	def build_layout(self):
+		""" Build Layout
+			Specifies all graphics within the root window and links associated event procedures
+		"""
 		self.root_window.title("Calculator")
 		
 		# Number buttons
@@ -68,6 +81,10 @@ class calculator():
 	
 	
 	def button_press_event(self, button):
+		""" Button Press Event
+			Triggers on the event of any button press
+			Handles event according to the function associated with the pressed button
+		"""
 		
 		# Update insertion position for the text box
 		if button != "clear":
@@ -126,9 +143,3 @@ if __name__ == "__main__":
 	calc = calculator(root_window)
 	root_window.mainloop()
 	
-	# Command line usage
-	"""
-	source = sys.stdin.readline()
-	value = calc.solve(source)
-	print('The answer is: {}'.format(value))
-	"""
